@@ -8,20 +8,91 @@
     font-family: "Inter", sans-serif;
 }
 
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 30px 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Centraliza horizontalmente */
+    gap: 20px; 
+        
+}
+
+header nav{
+    display: flex;
+    gap: 20px;
+    
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+           
+}
+
+form{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form input{
+    width: 80%;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+}
+
+form button{
+    border-radius: 0px 5 5 0px;
+    padding: 12px;
+}
+
+.lista-icone{
+    display: none;
+}
+
 .div-card {
     border: 1px solid #9f9c9c;
-    width: 15%;
-    /* text-align: center; */
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 10px;
 }
 
 .div-card  img {
     width: 80%;
-    
+     
 }
 
 .section-cards {
+    position: relative; 
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
     display: flex;
     gap: 20px;
+    margin-top: 30px;
+    
+}
+
+.slides{
+    display: flex;
+    width: calc(100%);
+    animation: scroll 20s linear infinite; 
+    animation-play-state: running;
+   
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .tag-p {
