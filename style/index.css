@@ -17,6 +17,9 @@ header {
     align-items: center;
     justify-content: space-between; /* Centraliza horizontalmente */
     gap: 20px; 
+    position: sticky;
+    top:0;
+    z-index: 1;
         
 }
 
@@ -152,4 +155,63 @@ h2 > a {
 .span-valor {
     font-size: 28px;
     font-weight: 600;
+}
+
+/* Estilos para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empilha os elementos no cabeçalho */
+        padding: 20px;
+        gap: 10px;
+    }
+
+    form {
+        width: 100%; /* O formulário ocupa toda a largura */
+    }
+
+    form input {
+        width: 70%; /* Ajusta o tamanho do campo de entrada */
+    }
+
+    .section-cards {
+        flex-direction: column; /* Empilha os cartões */
+        align-items: center;
+    }
+
+    .div-card {
+        width: 90%; /* Ajusta a largura dos cartões */
+    }
+
+    .slides {
+        flex-wrap: nowrap; /* Garante que os slides não quebrem */
+    }
+}
+
+/* Estilos para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    header nav {
+        flex-direction: column; /* Empilha os itens da navegação */
+        align-items: center;
+    }
+
+    form input {
+        width: 100%; /* Campo de entrada ocupa toda a largura */
+    }
+
+    form button {
+        width: 100%; /* Botão ocupa toda a largura */
+        margin-top: 10px;
+    }
+
+    .div-card {
+        width: 100%; /* Cartões ocupam toda a largura */
+    }
+
+    .span-valor {
+        font-size: 20px; /* Reduz o tamanho da fonte */
+    }
 }
