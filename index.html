@@ -221,6 +221,17 @@
             </div>            
         </section>
     </main>
+    <button id="btn-filtrar" class="btn-filtrar">Filtrar</button>
+    <aside id="aside-filtro">
+        <div class="frete">
+            <input type="checkbox" id="meuCheckbox" name="minhaOpcao" value="valorDaOpcao">
+            <label for="meuCheckbox">Frete Grátis</label>
+        </div>
+        <div class="entrega">
+            <input type="checkbox" id="meuCheckbox2" name="minhaOpcao" value="valorDaOpcao">
+            <label for="meuCheckbox2">Pronta Entrega</label>
+        </div>
+    </aside>
     <aside>
         <div class="frete">
             <input type="checkbox" id="meuCheckbox" name="minhaOpcao" value="valorDaOpcao">
@@ -292,9 +303,15 @@
         <div class="rodape">
             <hr>
             <p>&copy; 2025 Livraria GT. Todos os direitos reservados.</p>
-        </div>
-        
+        </div>      
     </footer>
+
+    <script>
+        document.getElementById('btn-filtrar').addEventListener('click', function () {
+            const aside = document.getElementById('aside-filtro');
+            aside.classList.toggle('active'); // Alterna a classe 'active' para mostrar/ocultar o aside
+        });
+    </script>
 
 </body>
 
