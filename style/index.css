@@ -175,25 +175,18 @@ h2 > a {
 }
 
 main {
-    margin-left: 270px; /* Adiciona espaço para o aside (ajuste conforme a largura do aside) */
-    flex: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
+    display: grid;
+    grid-template-columns: 1fr 5fr;
 }
 
-aside {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 250px;
-    height: 685px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    border-radius: 15px;
-    background-color: #a2d9ce; /* Nova cor do aside */
-    padding: 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    font-family: "Delius Unicase", cursive;
+
+.aside-filtro{
+    position: sticky;
+    top: 110px;
+    background-color: #a2d9ce;
+    padding: 20px;
+    height: 100%;
+
 }
 
 aside h1{
@@ -241,6 +234,7 @@ footer {
     border-top: 1px solid #455a64; /* Linha no topo */
     width: 100%; /* Ocupa toda a largura */
     font-family: "Delius Unicase", cursive;
+    z-index: 1;
 }
 
 footer div a {
@@ -251,19 +245,9 @@ footer div a {
     transition: color 0.3s ease;
 }
 
-footer div a:hover {
-    color: #a2d9ce; /* Novo hover dos ícones */
-}
 
 footer ul{
     list-style-type: none;
-}
-
-footer div a {
-    color: #fff; /* Cor dos ícones */
-    font-size: 24px; /* Tamanho dos ícones */
-    margin: 0 10px; /* Espaçamento entre os ícones */
-    text-decoration: none; /* Remove sublinhado */
 }
 
 footer div a:hover {
@@ -286,7 +270,6 @@ footer div a:hover {
     text-align: left; 
     margin-right: 300px;
     margin-left: 200px;
-
 }
 
 .rodape-secundario {
@@ -316,15 +299,16 @@ footer div a:hover {
 
 .rodape{
     display: grid;
+    margin: 0;
 }
 
 .rodape hr{
     border: 0;
     height: 2px;
     background: linear-gradient(to right, #f0f0f0, #ccc, #f0f0f0);
-    margin: 15px auto;
-    width: 50%;
-    
+    margin: 5px auto;
+    width: 50%;  
+    align-items: center;  
 }
 
 /* Estilos para telas menores que 768px (tablets e celulares) */
