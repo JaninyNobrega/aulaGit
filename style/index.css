@@ -9,16 +9,15 @@
     font-family: "Inter", sans-serif;
 }
 
+/* Garante que o HTML e o body ocupem toda a altura da janela */
 html, body {
-    height: 100%; /* Garante que o HTML e o body ocupem toda a altura da janela */
-    margin: 0; /* Remove margens padrão */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
-    display: flex;
-    flex-direction: column; /* Organiza os elementos em uma coluna */
-    margin: 0;
-    height: 100%;
     background-color: #f7f7f7; /* Novo fundo */
     color: #333; /* Nova cor de texto principal */
     font-family: "Delius Unicase", cursive;
@@ -177,8 +176,8 @@ h2 > a {
 main {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    flex: 1;
 }
-
 
 .aside-filtro{
     position: sticky;
@@ -207,6 +206,13 @@ aside ul li {
 aside ul li:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Hover mais suave */
 }
+
+.hidden-button {
+    display: none;
+    padding: 20px;
+    position: relative;
+}
+
 .frete{
     display: flex;
     margin: 5px;
@@ -225,16 +231,15 @@ aside ul li:hover {
     margin-bottom: 15px;
 }
 
+/* Garante que o rodapé fique no final */
 footer {
     background-color: #2c3e50; /* Cor de fundo */
     color: #ecf0f1; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    padding: 5px; /* Espaçamento interno */
-    font-size: 14px; /* Tamanho da fonte */
-    border-top: 1px solid #455a64; /* Linha no topo */
-    width: 100%; /* Ocupa toda a largura */
-    font-family: "Delius Unicase", cursive;
-    z-index: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    border-top: 1px solid #455a64;
+    width: 100%;
 }
 
 footer div a {
@@ -311,61 +316,51 @@ footer div a:hover {
     align-items: center;  
 }
 
-/* Estilos para telas menores que 768px (tablets e celulares) */
+/* Responsividade para telas menores (mobile) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Empilha os elementos no cabeçalho */
-        padding: 20px;
-        gap: 10px;
+    /* Esconde o aside e exibe o botão "Filtrar" */
+    .aside-filtro {
+        display: none;
     }
 
-    form {
-        width: 100%; /* O formulário ocupa toda a largura */
+    .hidden-button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background-color: #d6dce2;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
     }
 
-    form input {
-        width: 70%; /* Ajusta o tamanho do campo de entrada */
+    .hidden-button:hover {
+        background-color: #2c3e50;
+        color: #fff;
+        border: 1px solid #2c3e50;
     }
 
-    .section-cards {
-        flex-direction: column; /* Empilha os cartões */
+    /* Centraliza o conteúdo do footer */
+    footer .rodape-inicial {
+        flex-direction: column;
         align-items: center;
+        margin: 0;
     }
 
-    .div-card {
-        width: 90%; /* Ajusta a largura dos cartões */
+    footer .links {
+        text-align: center;
+        padding-left: 0;
     }
 
-    .slides {
-        flex-wrap: nowrap; /* Garante que os slides não quebrem */
+    footer .rodape-secundario {
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    footer .rodape {
+        margin-top: 20px;
     }
 }
 
-/* Estilos para telas menores que 480px (celulares) */
-@media (max-width: 480px) {
-    header {
-        padding: 15px;
-    }
-
-    header nav {
-        flex-direction: column; /* Empilha os itens da navegação */
-        align-items: center;
-    }
-
-    form input {
-        width: 100%; /* Campo de entrada ocupa toda a largura */
-    }
-
-    form button {
-        width: 100%; /* Botão ocupa toda a largura */
-        margin-top: 10px;
-    }
-
-    .div-card {
-        width: 100%; /* Cartões ocupam toda a largura */
-    }
-
-    .span-valor {
-        font-size: 20px; /* Reduz o tamanho da fonte */
-    }
-}
