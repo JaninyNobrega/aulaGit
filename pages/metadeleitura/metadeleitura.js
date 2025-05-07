@@ -1,6 +1,7 @@
 const searchInput = document.getElementById('searchInput')
 const searchButton = document.getElementById('searchButton')
 const booksContainer = document.getElementById('booksContainer')
+const metaLivros = document.getElementById('metaLivros')
 
 searchButton.addEventListener('click', (event) => {
     event.preventDefault()
@@ -36,10 +37,10 @@ function fetchBooks(query) {
                     </div>
                     <div class="div-texto">
                         <div class="div-titulo">
-                            <h1>${item.title}</h1>
-                            <button>+</button>
+                            <h1 class="truncate text-xs font-bold w-full">${item.title}</h1>                            
                         </div>
-                        <h2>${item.author_name ? item.author_name.join(', ') : 'Autor desconhecido'}</h2>
+                        <h2 class="my-2text-[12px]">${item.author_name ? item.author_name.join(', ') : 'Autor desconhecido'}</h2>
+                        <button class="w-full h-6 p-1 border border-blue-500 rounded-md flex justify-center"><i class="text-blue-500 fa-solid fa-plus"></i></button>
                     </div>
                 </div>             
             `;
