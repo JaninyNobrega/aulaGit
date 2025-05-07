@@ -40,7 +40,7 @@ function fetchBooks(query) {
                             <h1 class="truncate text-xs font-bold w-full">${item.title}</h1>                            
                         </div>
                         <h2 class="my-2text-[12px]">${item.author_name ? item.author_name.join(', ') : 'Autor desconhecido'}</h2>
-                        <button class="w-full h-6 p-1 border border-blue-500 rounded-md flex justify-center"><i class="text-blue-500 fa-solid fa-plus"></i></button>
+                        <button onclick="adicionarLivro('${urlImagem}')" class="w-full h-6 p-1 border border-blue-500 rounded-md flex justify-center"><i class="text-blue-500 fa-solid fa-plus"></i></button>
                     </div>
                 </div>             
             `;
@@ -50,4 +50,14 @@ function fetchBooks(query) {
         console.log('Erro ao buscar livros:', erro);
         booksContainer.innerHTML = '<h1>Erro ao buscar livros</h1>';
     });
+}
+
+function adicionarLivro (capa){
+    metaLivros.innerHTML += `
+        <div class="div-card w-[60px]">
+            <div class="div-img">
+                <img src='${capa}' alt="capa do livro" class="w-[150px] h-auto">
+            </div>
+        </div>
+    `
 }
