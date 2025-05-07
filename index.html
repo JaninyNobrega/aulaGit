@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style/index.css">
+    <title>Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header class="bg-[#242e56]">
+        <h1 class="font-bold text-2xl">Livraria GT</h1>
+        <form class="form-header">
+            <input type="text" class="bg-white">
+            <button class="bg-white h-10 flex"><i class="fa-solid fa-magnifying-glass" style="color: #000;"></i></button>
+        </form>
+        <nav class="nav-header">
+            <ul class="lista-links">
+                <li>Home</li>
+                <li>Categorias</li>
+            </ul>
+            <ul>
+                <li><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></li>
+                <li class="lista-icone"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button class="lg:hidden block bg-gray-600 rounded-full w-48 h-8 px-3 mt-3 ml-3 text-white font-semibold">
+            <div class=" flex gap-3 justify-center items-center">
+                <span>
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                    </svg>
+                </span>
+                <span class="text-xl">Filtrar</span>
+            </div>
+        </button>
+        <aside class="vou mudar essa linha mais uma vez">
+            <form class="pt-5 pb-2 grid gap-3">
+                <div>
+                <input type="checkbox">
+                <label for="">Frete grátis</label>
+                </div>
+                <div>
+                <input type="checkbox" class="">
+                <label for="">Pronta entrega</label>
+                </div>
+            </form>
+            <nav>
+                <h1><a href="./metadeleitura.html">Meta de Leitura</a></h1>
+                <h1 class="my-4 font-bold">Condição</h1>
+                <ul class="grid gap-2 pl-3">
+                    <li><a href="">Novo</a></li>
+                    <li><a href="">Usado</a></li>
+                </ul>
+                <h1 class="my-4 font-bold">Categoria</h1>
+                <ul class="grid gap-2 pl-3">
+                    <li><a href="">Romance</a></li>
+                    <li><a href="">Desenvolvimento pessoal</a></li>
+                    <li><a href="">Drama</a></li>
+                    <li><a href="">Literatura e ficção</a></li>
+                    <li><a href="">Terror</a></li>
+                    <li><a href="">História</a></li>
+                    <li><a href="">Financeiro</a></li>
+                </ul>
+                <h1 class="my-4 font-bold">Formato</h1>
+                <ul class="grid gap-2 pl-3">
+                    <li><a href="">Capa dura</a></li>
+                    <li><a href="">Capa comum</a></li>
+                    <li><a href="">Ebook</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="section-cards">
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro1.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro2.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro3.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro4.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro5.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+            <div class="div-card">
+                <div class="div-img">
+                    <img src="./assets/livro6.jpg" alt="">
+                    <p class="tag-p">frete grátis</p>
+                </div>
+                <div class="div-texto">
+                    <div class="div-titulo">
+                        <h1>Ponto de Inflexão</h1>
+                        <button>+</button>
+                    </div>
+                    <h2><a href="">Desenvolvimento pessoal</a></h2>
+                    <p>R$ <span class="span-valor">69</span>,99</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#242e56]">
+        <div class="div-footer-flex">
+            <h1 class="font-bold text-[32px]">Livraria GT</h1>
+            <nav class="nav-footer">
+                <ul>
+                    <li><a href="">Categorias</a></li>
+                    <li><a href="">Autores</a></li>
+                    <li><a href="">Editoras</a></li>
+                    <li><a href="">Ebooks</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Minha conta</a></li>
+                    <li><a href="">Trocas e devoluções</a></li>
+                    <li><a href="">Suporte ao cliente</a></li>
+                    <li><a href="">Dúvidas Frequentes</a></li>
+                    <li><a href="">Fale conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-footer-text">
+            <hr>
+            <p>&copy; 2025 Livraria GT. Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>

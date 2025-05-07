@@ -1,0 +1,211 @@
+ * {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+} 
+
+header {
+    color: #fff;
+    display: flex;
+    /* background-color: #242e56; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.form-header {
+    width: 40%;
+    display: flex;
+}
+
+.form-header input{
+    border-radius: 5px 0 0 5px;
+    height: 40px;
+    width: 80%;
+}
+
+.form-header button {
+    border-radius: 0 5px 5px 0;
+    padding: 12px;
+}
+
+.nav-header, .nav-header ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.lista-icone {
+    display: none;
+}
+
+.aside-filtro {
+    position: sticky;
+    top: 110px;
+    height: fit-content;
+}
+
+.button-hidden {
+    display: none;
+}
+
+.div-card {
+    border: 1px solid #9f9c9c;
+    width: 230px;
+    /* text-align: center; */
+}
+
+.div-card  img {
+    width: 80%;
+    
+}
+
+.section-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tag-p {
+    top: 10px;
+    right: 10px;
+    /* z-index: -1; */
+    position: absolute;
+    background-color: #88e473;
+    width: fit-content;
+    padding: 1px 3px;
+    border-radius: 10px;
+}
+
+.div-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f4eeee;
+    height: 270px;
+}
+
+h2 > a {
+    font-size: 12px;
+}
+
+.div-titulo h1 {
+    font-size: 20px;
+}
+
+.div-titulo button {
+    background-color: #000;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.div-titulo button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.div-titulo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-texto {
+    padding: 10px;
+}
+
+.span-valor {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+footer {
+    padding: 20px 100px;
+    color: #fff;
+    display: block;
+}
+
+.div-footer-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-footer {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    padding-right: 100px;
+}
+
+.nav-footer ul {
+    list-style: none;
+}
+
+.nav-footer a {
+    color: #fff;
+}
+
+.nav-footer a:hover {
+    text-decoration: underline;
+}
+
+hr {
+   border: 1px solid #fff;
+   width: 50%;
+}
+
+.div-footer-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 10px;
+}
+.hidden-button{
+    display: none;
+}
+
+/* (width <= 998px) ou (max-width: 998px) Tablet deitado */ 
+@media screen and (width <= 998px) {   
+    header {
+        flex-wrap: wrap;
+    }
+    .form-header {
+        order: 2;
+        width: 100%;
+    }
+    .form-header input {
+        width: 120%;
+    }
+    
+    .lista-icone {
+        display: inline;
+    }
+    
+    .lista-links li {
+        display: none;
+    }
+
+    main {
+        display: flex;
+    }
+    .div-footer-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-footer {
+        padding: 0;
+    }
+}

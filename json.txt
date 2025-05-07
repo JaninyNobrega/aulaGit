@@ -1,0 +1,19 @@
+JSON - Javscript Object Notation
+
+Formato de texto com base no objeto JavaScrip 
+
+
+1. Formato objeto:
+{
+    id: 1,
+    nome: "um nome",
+    endereco: "um endereço"
+}
+
+2. Formato JSON:
+{
+    "id": 1,
+    "nome": "um nome",
+    "endereco": "um endereço"
+}
+

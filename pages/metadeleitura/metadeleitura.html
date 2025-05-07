@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../../style/index.css">
+    <title>Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="h-screen">
+    <header class="bg-[#242e56]">
+        <h1 class="font-bold text-2xl">Livraria GT</h1>
+        <form class="form-header">
+            <input type="text" id="searchInput" class="bg-white text-black pl-3">
+            <button id="searchButton" class="bg-white h-10 flex"><i class="text-black fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <nav class="nav-header">
+            <ul class="lista-links">
+                <li>Home</li>
+                <li>Categorias</li>
+            </ul>
+            <ul>
+                <li><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></li>
+                <li class="lista-icone"><i class="fa-solid fa-bars" style="color: #ffffff;"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="h-full">
+        <section class="section-cards">
+            <div id="booksContainer" class="flex gap-5 p-5 flex-wrap"></div>
+        </section>
+        <section>
+            <h1 class="font-bold text-2xl">Meta de Leitura</h1>
+            <div id="metaLivros" class="flex gap-5 p-5 flex-wrap"></div>
+        </section>
+    </main>
+    <footer class="bg-[#242e56] absolute w-full mt-30">
+        <div class="div-footer-flex">
+            <h1 class="font-bold text-2xl">Livraria GT</h1>
+            <nav class="nav-footer">
+                <ul>
+                    <li><a href="">Categorias</a></li>
+                    <li><a href="">Autores</a></li>
+                    <li><a href="">Editoras</a></li>
+                    <li><a href="">Ebooks</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Minha conta</a></li>
+                    <li><a href="">Trocas e devoluções</a></li>
+                    <li><a href="">Suporte ao cliente</a></li>
+                    <li><a href="">Dúvidas Frequentes</a></li>
+                    <li><a href="">Fale conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-footer-text">
+            <hr>
+            <p>&copy; 2025 Livraria GT. Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="metadeleitura.js"></script>
+</body>
+
+</html>
