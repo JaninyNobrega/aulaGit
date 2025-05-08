@@ -12,6 +12,8 @@ searchButton.addEventListener('click', (event) => {
 })
 
 function fetchBooks(query) {
+    booksContainer.innerHTML = `
+        <img width="100px" src="https://cdn.pixabay.com/animation/2023/08/11/21/18/21-18-05-265_512.gif">`;
     fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`)
     .then(res => res.json())
     .then(dados => {
@@ -28,11 +30,11 @@ function fetchBooks(query) {
         booksContainer.innerHTML = livrosFiltrados.map(item => {
             const urlImagem = item.cover_i 
                 ? `https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`
-                : 'https://via.placeholder.com/150'; // Imagem padrão caso não tenha capa
+                : 'https://via.placeholder.com/150x200@2x?text=Sem+capa'; // Imagem padrão caso não tenha capa
             return `
-                <div class="div-card">
+                <div class="div-card w-[60px]">
                     <div class="div-img">
-                        <img src='${urlImagem}' alt="capa do livro">
+                        <img src='${urlImagem}' alt="capa do livro" class="w-[150px] h-auto"> 
                         <p class="tag-p">frete grátis</p>
                     </div>
                     <div class="div-texto">
@@ -40,7 +42,7 @@ function fetchBooks(query) {
                             <h1 class="truncate text-xs font-bold w-full">${item.title}</h1>                            
                         </div>
                         <h2 class="my-2text-[12px]">${item.author_name ? item.author_name.join(', ') : 'Autor desconhecido'}</h2>
-                        <button onclick="adicionarLivro('${urlImagem}')" class="w-full h-6 p-1 border border-blue-500 rounded-md flex justify-center"><i class="text-blue-500 fa-solid fa-plus"></i></button>
+                        <button onclick="adicionarLivro('${urlImagem}')" class="w-full h-6 p-1 border border-blue-500 rounded-md flex justify-center cursor-pointer hover:bg-blue-100"><i class="text-blue-500 fa-solid fa-plus"></i></button>
                     </div>
                 </div>             
             `;
@@ -52,12 +54,60 @@ function fetchBooks(query) {
     });
 }
 
-function adicionarLivro (capa){
-    metaLivros.innerHTML += `
-        <div class="div-card w-[60px]">
-            <div class="div-img">
-                <img src='${capa}' alt="capa do livro" class="w-[150px] h-auto">
+function adicionarLivro(capa) {
+    const livrosSalvos = JSON.parse(localStorage.getItem('metaLivros')) || [];
+    if (!livrosSalvos.includes(capa)) {
+        livrosSalvos.push(capa);
+        localStorage.setItem('metaLivros', JSON.stringify(livrosSalvos));
+
+        // Atualiza o DOM com o novo livro
+        metaLivros.innerHTML += `
+            <div class="div-card w-[60px]" data-capa="${capa}">
+                <div class="div-img">
+                    <img src='${capa}' alt="capa do livro" class="w-[150px] h-auto">
+                </div>
+                <button onclick="removerLivro('${capa}')" class="w-full h-6 p-1 mt-2 border border-red-500 rounded-md flex justify-center cursor-pointer hover:bg-red-100">
+                    <i class="text-red-500 fa-solid fa-trash"></i> Remover
+                </button>
             </div>
-        </div>
-    `
+        `;
+    }
 }
+
+function removerLivro(capa) {
+    let livrosSalvos = JSON.parse(localStorage.getItem('metaLivros')) || [];
+
+    // Remove o livro do array
+    livrosSalvos = livrosSalvos.filter(item => item !== capa);
+    localStorage.setItem('metaLivros', JSON.stringify(livrosSalvos));
+
+    // Remove o livro do DOM
+    const livroElement = document.querySelector(`[data-capa="${capa}"]`);
+    if (livroElement) {
+        livroElement.remove();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', carregarLivrosSalvos);
+
+function carregarLivrosSalvos() {
+    const livrosSalvos = JSON.parse(localStorage.getItem('metaLivros')) || [];
+
+    // Limpa o conteúdo atual para evitar duplicação
+    metaLivros.innerHTML = '';
+
+    // Adiciona os livros salvos ao DOM
+    livrosSalvos.forEach(capa => {
+        metaLivros.innerHTML += `
+            <div class="div-card w-[60px]" data-capa="${capa}">
+                <div class="div-img">
+                    <img src='${capa}' alt="capa do livro" class="w-[150px] h-auto">
+                </div>
+                <button onclick="removerLivro('${capa}')" class="w-full h-6 p-1 mt-2 border border-red-500 rounded-md flex justify-center cursor-pointer hover:bg-red-100">
+                    <i class="text-red-500 fa-solid fa-trash"></i> Remover
+                </button>
+            </div>
+        `;
+    });
+}
+
